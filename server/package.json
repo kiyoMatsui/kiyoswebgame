@@ -1,0 +1,43 @@
+{
+	"name": "webgame",
+	"version": "0.0.1",
+	"description": "A Webgame using docker, nette and emscripten.",
+	"keywords": [
+		"docker",
+		"nette",
+		"webgame"
+	],
+	"author": "Kiyo",
+	"license": "MIT",
+	"homepage": "https://github.com/kiyoMatsui",
+	"dependencies": {
+		"bootstrap": "^4.5.2",
+		"jquery": "^3.5.1",
+		"jquery-ui": "^1.12.1",
+		"naja": "^2.0.1",
+		"popper.js": "^1.16.1"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.11.6",
+		"compression-webpack-plugin": "^5.0.2",
+		"copy-webpack-plugin": "^6.1.0",
+		"css-loader": "^4.2.2",
+		"html-webpack-plugin": "^4.4.1",
+		"raw-loader": "^4.0.1",
+		"sass-loader": "^10.0.2",
+		"style-loader": "^1.2.1",
+		"webpack": "^4.44.1",
+		"webpack-cli": "^3.3.12",
+		"webpack-dev-server": "^3.11.0",
+		"webpack-merge": "^5.1.3"
+	},
+	"browserslist": [
+		"last 2 versions",
+		"not dead"
+	],
+	"main": "app/main.js",
+	"scripts": {
+		"build": "webpack --config webpack.config.js --mode production",
+		"dev": "webpack-dev-server --config webpack.config.js --mode development --hot --host 0.0.0.0 --port 9001"
+	}
+}

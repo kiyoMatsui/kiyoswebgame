@@ -1,0 +1,32 @@
+{import '../mainpage.latte'} {block #maintag}
+
+<main role="main" class="inner cover">
+    <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Maybe an add</span>
+                <span class="badge badge-secondary badge-pill">I like money</span>
+            </h4>
+            <p class="lead">Buy me</p>
+            <p>Or me</p>
+            <p>T&C apply</p>
+        </div>
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Set new password</h4>
+            <form n:name="resetPasswordForm" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label n:name="email" for="email">Email</label>
+                    <div class="input-group">
+                        <input n:name="email" type="email" class="form-control" id="email" placeholder="email" required />
+                        <div class="invalid-feedback" style="width: 100%"></div>
+                    </div>
+                </div>
+                <button n:name="send" class="btn btn-light btn-lg" type="submit">
+          Reset Password
+        </button>
+                <p></p>
+            </form>
+        </div>
+    </div>
+</main>
+{/block}

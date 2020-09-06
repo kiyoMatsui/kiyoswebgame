@@ -1,0 +1,50 @@
+{block #head}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{$titlepage}</title>
+<style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+</style>
+<script src="./dist/myMain.js"></script>
+{/block} {block #content}
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header n:attr="class => $header_height">
+        <div class="inner">
+            <h3 class="masthead-brand">Webgame</h3>
+            <nav class="nav nav-masthead justify-content-center">
+                <a n:attr="class => $home_attr" n:href="Homepage:default">Home</a>
+                <a n:attr="class => $play_attr" n:href="Servers:default">Play</a> {if $user->loggedIn}
+                <a n:attr="class => $account_attr" n:href="Account:default">{$_SESSION['username']}</a
+        >
+        {else}
+        <a n:attr="class => $signin_attr" n:href="Signin:default"
+          >Sign in/Register</a
+        >
+        {/if}
+      </nav>
+    </div>
+  </header>
+  {include #maintag}
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p>
+        Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by
+                <a href="https://twitter.com/mdo">@mdo</a>
+                </p>
+        </div>
+        </footer>
+</div>
+{/block}

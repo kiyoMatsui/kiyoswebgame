@@ -1,0 +1,20 @@
+{import '../mainpage.latte'} {block #maintag}
+<main role="main" class="inner cover">
+    <div class="container-fluid">
+        <main role="main" class="col-md">
+            <a style="font-size: 1.2rem">Servers (WIP just hit join to play)</a
+      ><a
+        n:foreach="$flashes as $flash"
+        n:class="alert, 'alert-' . $flash->type"
+        >{$flash->message}</a
+      >
+      <div class="table-responsive">
+        <a class="ajax" n:href="serverrow:Refresh!"
+          ><button type="button" class="btn btn-warning">Refresh</button></a
+        >
+        {control serverrow}
+      </div>
+    </main>
+  </div>
+</main>
+{/block}

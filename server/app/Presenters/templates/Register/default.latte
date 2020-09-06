@@ -1,0 +1,65 @@
+{import '../mainpage.latte'} {block #maintag}
+<main role="main" class="inner cover">
+    <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Maybe an add</span>
+                <span class="badge badge-secondary badge-pill">I like money</span>
+            </h4>
+            <p class="lead">Buy me</p>
+            <p>Or me</p>
+            <p>T&C apply</p>
+        </div>
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Account registration</h4>
+            <p>
+                Already Registered?
+                <a class="text-warning" n:href="Signin:default">Sign in here</a>
+            </p>
+            <form n:name="registerForm" class="needs-validation" novalidate>
+                <ul class="errors" n:if="$form->hasErrors()">
+                    <li class="text-danger" n:foreach="$form->errors as $error">
+                        {$error}
+                    </li>
+                </ul>
+                <div class="mb-3">
+                    <label n:name="username" for="username">Username<span class="text-muted">(Can be anything)</span></label
+          >
+          <input
+            n:name="username"
+            type="text"
+            class="form-control"
+            id="username"
+            placeholder="Username"
+            required
+          />
+          <div class="invalid-feedback" style="width: 100%">
+            Your username is required.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label n:name="email" for="inputEmail">Email</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">@</span>
+                        </div>
+                        <input n:name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus />
+                        <div class="invalid-feedback">
+                            Please enter a valid email address for shipping updates.
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label n:name="password" for="password">Password</label>
+                    <input n:name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required />
+                    <div class="invalid-feedback">Please enter your password.</div>
+                </div>
+                <hr class="mb-4" />
+                <button n:name="send" class="btn btn-light btn-lg btn-block" type="submit">
+          Register
+        </button>
+            </form>
+        </div>
+    </div>
+</main>
+{/block}

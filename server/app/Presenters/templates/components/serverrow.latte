@@ -1,0 +1,50 @@
+{snippet serverrow} {foreach $flashes as $flash}
+<div class="flash {$flash->type}">{$flash->message}</div>
+{/foreach}
+<table class="serverrow table table-striped table-dark">
+    <thead>
+        <tr>
+            <th>Ping</th>
+            <th>Name</th>
+            <th>Discription</th>
+            <th>Info</th>
+            <th>Join Server</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{$ping1}</td>
+            <td>Server 1</td>
+            <td>Noobs only</td>
+            <td>Map: delower than dust</td>
+            <td>
+                <a href="{plink Game:default}"><button type="button" class="btn btn-light">Join</button></a
+        >
+      </td>
+    </tr>
+    <tr>
+      <td>{$ping2}</td>
+      <td>Server 2</td>
+      <td>EU only</td>
+      <td>Map: bloodgulch</td>
+      <td>
+        <a href="{plink Game:default}"
+          ><button type="button" class="btn btn-light">Join</button></a
+        >
+      </td>
+    </tr>
+    <tr>
+      <td>{$ping3}</td>
+      <td>Server 3</td>
+      <td>Pros only</td>
+      <td>Map: black forest</td>
+      <td>
+        <a href="{plink Game:default}"
+          ><button type="button" class="btn btn-light">Join</button></a
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+{/snippet}

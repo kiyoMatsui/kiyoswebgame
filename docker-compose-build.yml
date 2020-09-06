@@ -1,0 +1,34 @@
+version: "3.2"
+services:
+  miscsetup:
+    image: nginx
+    working_dir: /usr/share/nginx/html 
+    volumes:
+      - ./:/usr/share/nginx/html:rw
+    command: "sh ./setup.sh"
+    container_name: miscsetup
+  nodebuild:
+    image: "node:latest"
+    working_dir: /home/node/
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./server:/home/node/
+    command: "sh ./buildnode.sh"
+    container_name: nodebuild
+  buildem:
+    image: "emscripten/emsdk:latest"
+    working_dir: /src
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./server:/src/
+    command: "sh ./buildem.sh"
+    container_name: buildem
+  buildphp:
+    image: "composer"
+    volumes:
+      - ./server:/app
+    command: "sh ./buildphp.sh"
+    container_name: buildphp
+

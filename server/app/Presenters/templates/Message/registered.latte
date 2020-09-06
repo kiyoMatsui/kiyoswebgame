@@ -1,0 +1,10 @@
+{import '../mainpage.latte'} {block #maintag}
+<main role="main" class="inner cover">
+    <div class="text-center mb-4">
+        <img class="mb-4" src="../dist/logo.svg" alt="" width="72" height="72" /> {foreach $flashes as $flash}
+        <div class="flash {$flash->type}">{$flash->message}</div>
+        {/foreach}
+    </div>
+</main>
+<script src="../dist/myMain.js"></script>
+{/block}

@@ -1,0 +1,56 @@
+{import '../mainpage.latte'} {block #maintag}
+
+<main role="main" class="inner cover">
+    <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Maybe an add</span>
+                <span class="badge badge-secondary badge-pill">I like money</span>
+            </h4>
+            <p class="lead">Buy me</p>
+            <p>Or me</p>
+            <p>T&C apply</p>
+        </div>
+        <div class="col-md-8 order-md-1">
+            <h5 class="mb-3">New Username</h5>
+            <form n:name="usernameForm" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label n:name="username" for="username">Set new username</label>
+                    <div class="input-group">
+                        <input n:name="username" type="text" class="form-control" id="username" placeholder="Username" required />
+                        <div class="invalid-feedback" style="width: 100%">
+                            Your username is required.
+                        </div>
+                    </div>
+                </div>
+                <button n:name="send" class="btn btn-light btn-sm fademe" type="submit">
+          Set Username
+        </button>
+                <p></p>
+            </form>
+
+            <h5 class="mb-3">Account settings</h5>
+            <div class="mb-3">
+                <a n:href="Account:changeemail"><button type="button" class="btn btn-light btn-lg btn-block">
+            Change Email
+          </button></a
+        >
+      </div>
+      <div class="mb-3">
+        <a n:href="Account:changepassword"
+          ><button type="button" class="btn btn-light btn-lg btn-block">
+            Change Password
+          </button></a
+        >
+      </div>
+      <div class="mb-3">
+        <a n:href="Out!"
+          ><button type="button" class="btn btn-light btn-lg btn-block">
+            Sign out
+          </button></a
+        >
+      </div>
+    </div>
+  </div>
+</main>
+{/block}

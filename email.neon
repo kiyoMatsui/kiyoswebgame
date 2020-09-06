@@ -1,0 +1,10 @@
+
+mail:
+	# use SmtpMailer
+	smtp: true       
+	host: 'smtp.gmail.com'         
+	username: 'your_email_here'    
+	password: 'your_email_password'   
+	timeout: 60    
+	secure: 'tls'
+

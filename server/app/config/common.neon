@@ -1,0 +1,37 @@
+#
+# WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
+# https://nette.org/security-warning
+#
+parameters:
+
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: App\*Module\Presenters\*Presenter
+
+session:
+    debugger: true
+    expiration: 3 days
+#    cookieDomain: 'domainAllowed.com'
+#    cookieSamesite: Lax # (Strict|Lax|None) defaults to unset
+
+database:
+	dsn: 'mysql:host=db;dbname=mainwebgame'
+	user: kiyo
+	password: password
+
+
+services:
+	- App\Model\UserManager
+	- App\Components\FormFactory
+	- App\Components\SignInFormFactory
+	- App\Components\RegisterFormFactory
+	- App\Components\ChangepasswordFormFactory
+	- App\Components\ChangeemailFormFactory
+	- App\Components\ResetPasswordFormFactory
+	- App\Components\UsernameFormFactory
+	router: App\Router\RouterFactory::createRouter
+
+#http:
+#   cookieSecure: true

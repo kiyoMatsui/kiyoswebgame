@@ -1,0 +1,20 @@
+{import '../mainpage.latte'} {block #maintag}
+
+<main role="main" class="inner cover">
+    <div id="loadingDiv">Emscripten Game</div>
+    <p></p>
+    <canvas class="emscripten" id="canvas"></canvas>
+
+    <script>
+        var Module = {
+            canvas: (function() {
+                return canvas = document.getElementById('canvas')
+            })()
+        };
+        var script = document.createElement('script');
+        script.src = "dist/index.js";
+        document.body.appendChild(script);
+    </script>
+</main>
+
+{/block}
