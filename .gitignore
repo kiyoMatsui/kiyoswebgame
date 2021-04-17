@@ -6,6 +6,8 @@ server/composer.lock
 server/package-lock.json
 server/www/dist/*.js
 server/www/dist/*.wasm
+server/www/dist/*.map
+server/www/dist/*.data
 server/log/*.log
 server/log/*.html
 server/temp/cache
